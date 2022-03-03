@@ -72,12 +72,13 @@ function startQuiz(){
         var choice4 = document.createElement("ol");
         choice4.appendChild(choicesContainerEl);
     //button container
-    var buttonBox = document.createElement("div")
-    buttonBox.appendChild(quizContainerEl)
+    var buttonBox = document.createElement("div");
+    buttonBox.appendChild(quizContainerEl);
         //create previous button
-    var buttonPrev = document.createElement("button")
-    buttonPrev.appendChild(buttonBox)
+    var buttonPrev = document.createElement("button");
+    buttonPrev.appendChild(buttonBox);
     //create next button
-    var buttonNext = document.createElement("button")
-    buttonNext.appendChild(buttonBox)
+    var buttonNext = document.createElement("button");
+    buttonNext.appendChild(buttonBox);
+    return startQuiz;
 }
