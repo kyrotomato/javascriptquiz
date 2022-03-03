@@ -46,6 +46,7 @@ var questions = [{
 var Qcount = 0;
 var correct = 0;
 var Qfinish = false;
+//select the div with id quiz
 quiz = document.querySelector("#quiz");
 
 button = document.getElementById("start");
@@ -53,10 +54,13 @@ button.addEventListener("click", startQuiz);
 function startQuiz(){
     //create container to hold everything
     var quizContainerEl = document.createElement("div");
+    //append quizContainerEl to the quiz div
     quiz.appendChild(quizContainerEl);
+    
     //create div for the question
     var questionContainerEl = document.createElement("div");
     quizContainerEl.appendChild(questionContainerEl);
+    questionContainerEl.innerText = questions;
     //create el for the choices
     var choicesContainerEl = document.createElement("ul");
     questionContainerEl.appendChild(choicesContainerEl);
@@ -74,13 +78,15 @@ function startQuiz(){
         var choice4 = document.createElement("ol");
         choicesContainerEl.appendChild(choice4);
     //button container
-    var buttonBox = document.createElement("div");
-    buttonBox.appendChild(quizContainerEl);
+        var buttonBox = document.createElement("div");
+        quizContainerEl.appendChild(buttonBox);
         //create previous button
         var buttonPrev = document.createElement("button");
-        buttonPrev.appendChild(buttonBox);
+        buttonPrev.innerHTML = "Previous";
+        buttonBox.appendChild(buttonPrev);
         //create next button
         var buttonNext = document.createElement("button");
-        buttonNext.appendChild(buttonBox);
-        return startQuiz;
+        buttonNext.innerHTML = "Next";
+        buttonBox.appendChild(buttonNext);
+        start.remove();
 }
