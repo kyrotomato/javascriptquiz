@@ -46,39 +46,41 @@ var questions = [{
 var Qcount = 0;
 var correct = 0;
 var Qfinish = false;
+quiz = document.querySelector("#quiz");
 
 button = document.getElementById("start");
-button.addEventListener(start, startQuiz);
+button.addEventListener("click", startQuiz);
 function startQuiz(){
     //create container to hold everything
     var quizContainerEl = document.createElement("div");
+    quiz.appendChild(quizContainerEl);
     //create div for the question
     var questionContainerEl = document.createElement("div");
-    questionContainerEl.appendChild(quizContainerEl);
+    quizContainerEl.appendChild(questionContainerEl);
     //create el for the choices
     var choicesContainerEl = document.createElement("ul");
-    choicesContainerEl.appendChild(questionContainerEl);
+    questionContainerEl.appendChild(choicesContainerEl);
         //four spaces for answers
         //1
         var choice = document.createElement("ol");
-        choice.appendChild(choicesContainerEl);
+        choicesContainerEl.appendChild(choice);
         //2
         var choice2 = document.createElement("ol");
-        choice2.appendChild(choicesContainerEl);
+        choicesContainerEl.appendChild(choice2);
         //3
         var choice3 = document.createElement("ol");
-        choice3.appendChild(choicesContainerEl);
+        choicesContainerEl.appendChild(choice3);
         //4
         var choice4 = document.createElement("ol");
-        choice4.appendChild(choicesContainerEl);
+        choicesContainerEl.appendChild(choice4);
     //button container
     var buttonBox = document.createElement("div");
     buttonBox.appendChild(quizContainerEl);
         //create previous button
-    var buttonPrev = document.createElement("button");
-    buttonPrev.appendChild(buttonBox);
-    //create next button
-    var buttonNext = document.createElement("button");
-    buttonNext.appendChild(buttonBox);
-    return startQuiz;
+        var buttonPrev = document.createElement("button");
+        buttonPrev.appendChild(buttonBox);
+        //create next button
+        var buttonNext = document.createElement("button");
+        buttonNext.appendChild(buttonBox);
+        return startQuiz;
 }
