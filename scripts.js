@@ -43,9 +43,9 @@ var questions = [{
 //create container for questions
 
 //variables to store the question count, amount correct, and whether the quiz is done
-var Qcount = 0;
+var qCount = 0;
 var correct = 0;
-var Qfinish = false;
+var quizFinish = false;
 //select the div with id quiz
 quiz = document.querySelector("#quiz");
 
@@ -60,7 +60,7 @@ function startQuiz(){
     //create div for the question
     var questionContainerEl = document.createElement("div");
     quizContainerEl.appendChild(questionContainerEl);
-    questionContainerEl.innerText = questions;
+    questionContainerEl.innerText = questions[qCount].question;
     //create el for the choices
     var choicesContainerEl = document.createElement("ul");
     questionContainerEl.appendChild(choicesContainerEl);
@@ -89,4 +89,13 @@ function startQuiz(){
         buttonNext.innerHTML = "Next";
         buttonBox.appendChild(buttonNext);
         start.remove();
+        buttonNext.addEventListener("click", nextQ);
 }
+
+
+
+function nextQ(){
+    
+};
+//var count = 0
+//count i++1
