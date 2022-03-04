@@ -46,6 +46,7 @@ var questions = [{
 var qCount = 0;
 var correct = 0;
 var quizFinish = false;
+var answerChoice = 0;
 //select the div with id quiz
 quiz = document.querySelector("#quiz");
 
@@ -69,22 +70,22 @@ function startQuiz() {
     quizContainerEl.appendChild(choicesContainerEl);
     //four spaces for answers
     //1
-    var choice = document.createElement("ol");
+    var choice = document.createElement("button");
     choicesContainerEl.appendChild(choice);
     choice.innerText = questions[qCount].options[0];
     choice.setAttribute("id", "answerA");
     //2
-    var choice2 = document.createElement("ol");
+    var choice2 = document.createElement("button");
     choicesContainerEl.appendChild(choice2);
     choice2.innerText = questions[qCount].options[1];
     choice2.setAttribute("id", "answerB");
     //3
-    var choice3 = document.createElement("ol");
+    var choice3 = document.createElement("button");
     choicesContainerEl.appendChild(choice3);
     choice3.innerText = questions[qCount].options[2];
     choice3.setAttribute("id", "answerC");
     //4
-    var choice4 = document.createElement("ol");
+    var choice4 = document.createElement("button");
     choicesContainerEl.appendChild(choice4);
     choice4.innerText = questions[qCount].options[3];
     choice4.setAttribute("id", "answerD");
@@ -102,6 +103,7 @@ function startQuiz() {
     //remove start button
     start.remove();
     buttonNext.addEventListener("click", nextQ);
+    buttonPrev.addEventListener("click", prevQ);
     
 };
 
@@ -133,6 +135,80 @@ function nextQ() {
         //innertext
         answerD.innerText = questions[qCount].options[3];
 
+};
+function prevQ() {
+    //increase the q count so the question increase
+    qCount = qCount - 1;
+    //target the created div id
+    document.getElementById(questioncontainer);
+    //set the text of the container to the next question
+    questioncontainer.innerText = questions[qCount].question;
+
+    //target the choice elements
+        //1
+        document.getElementById(answerA);
+        //innertext
+        answerA.innerText = questions[qCount].options[0];
+        //2
+        document.getElementById(answerB);
+        //innertext
+        answerB.innerText = questions[qCount].options[1];
+        //3
+        document.getElementById(answerC);
+        //innertext
+        answerC.innerText = questions[qCount].options[2];
+        //4
+        document.getElementById(answerD);
+        //innertext
+        answerD.innerText = questions[qCount].options[3];
+
+};
+
+
+
+choice = document.getElementById("answerA");
+choice2 = document.getElementById("answerB");
+choice3 = document.getElementById("answerC");
+choice4 = document.getElementById("answerD");
+
+
+choice.addEventListener("click", lockAnswer);
+choice2.addEventListener("click", lockAnswer);
+choice3.addEventListener("click", lockAnswer);
+choice4.addEventListener("click", lockAnswer);
+
+function lockAnswer(){
+    if(document.getElementById(choice).clicked){
+        answerChoice=1;
+        console.log("1");
+    }
+    if(document.getElementById(choice2).clicked){
+        answerChoice=2;
+        console.log("2");
+    }
+    if(document.getElementById(choice3).clicked){
+        answerChoice=3;
+        console.log("3");
+    }
+    if(document.getElementById(choice4).clicked){
+        answerChoice=4;
+        console.log("4");
+    }
+    
+
+
+
+
+//this is gonna be the function{
+function checkCorrect() {
+//  if options[] = correct answer
+if(answerChoice === correctAnswer){
+//  add 1 to correct variable
+correct++;
+// set class to correct
+
+};
+};
 };
 //var count = 0
 //count i++1

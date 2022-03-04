@@ -1,0 +1,9 @@
+#answerA, #answerB ,#answerC , #answerD{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 20px;
+    width: 100px;
+    background-color: lightsalmon;
+    margin-top: 5px;
+}
