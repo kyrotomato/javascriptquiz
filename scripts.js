@@ -56,7 +56,7 @@ function startQuiz() {
     var quizContainerEl = document.createElement("div");
     //append quizContainerEl to the quiz div
     quiz.appendChild(quizContainerEl);
-
+    
     //create div for the question
     var questionContainerEl = document.createElement("div");
     //give the div an id
@@ -71,19 +71,23 @@ function startQuiz() {
     //1
     var choice = document.createElement("ol");
     choicesContainerEl.appendChild(choice);
-    choice.innerText = questions[qCount].options[0]
+    choice.innerText = questions[qCount].options[0];
+    choice.setAttribute("id", "answerA");
     //2
     var choice2 = document.createElement("ol");
     choicesContainerEl.appendChild(choice2);
-    choice2.innerText = questions[qCount].options[1]
+    choice2.innerText = questions[qCount].options[1];
+    choice2.setAttribute("id", "answerB");
     //3
     var choice3 = document.createElement("ol");
     choicesContainerEl.appendChild(choice3);
-    choice3.innerText = questions[qCount].options[2]
+    choice3.innerText = questions[qCount].options[2];
+    choice3.setAttribute("id", "answerC");
     //4
     var choice4 = document.createElement("ol");
     choicesContainerEl.appendChild(choice4);
-    choice4.innerText = questions[qCount].options[3]
+    choice4.innerText = questions[qCount].options[3];
+    choice4.setAttribute("id", "answerD");
     //button container
     var buttonBox = document.createElement("div");
     quizContainerEl.appendChild(buttonBox);
@@ -95,10 +99,11 @@ function startQuiz() {
     var buttonNext = document.createElement("button");
     buttonNext.innerHTML = "Next";
     buttonBox.appendChild(buttonNext);
-    start.remove();
+    //remove start button
+    //start.remove();
     buttonNext.addEventListener("click", nextQ);
     
-}
+};
 
 
 
@@ -112,10 +117,21 @@ function nextQ() {
 
     //target the choice elements
         //1
-        //innertext to 
+        document.getElementById(answerA);
+        //innertext
+        answerA.innerText = questions[qCount].options[0];
         //2
+        document.getElementById(answerB);
+        //innertext
+        answerB.innerText = questions[qCount].options[1];
         //3
+        document.getElementById(answerC);
+        //innertext
+        answerC.innerText = questions[qCount].options[2];
         //4
+        document.getElementById(answerD);
+        //innertext
+        answerD.innerText = questions[qCount].options[3];
 
 };
 //var count = 0
