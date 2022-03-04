@@ -104,6 +104,10 @@ function startQuiz() {
     start.remove();
     buttonNext.addEventListener("click", nextQ);
     buttonPrev.addEventListener("click", prevQ);
+    choice.addEventListener("click", lockAnswer1);
+    choice2.addEventListener("click", lockAnswer2);
+    choice3.addEventListener("click", lockAnswer3);
+    choice4.addEventListener("click", lockAnswer4);
     
 };
 
@@ -166,49 +170,27 @@ function prevQ() {
 
 
 
-choice = document.getElementById("answerA");
-choice2 = document.getElementById("answerB");
-choice3 = document.getElementById("answerC");
-choice4 = document.getElementById("answerD");
+// choice = document.getElementById("answerA");
+// choice2 = document.getElementById("answerB");
+// choice3 = document.getElementById("answerC");
+// choice4 = document.getElementById("answerD");
 
+// choice.addEventListener("click", lockAnswer);
+// choice2.addEventListener("click", lockAnswer);
+// choice3.addEventListener("click", lockAnswer);
+// choice4.addEventListener("click", lockAnswer);
 
-choice.addEventListener("click", lockAnswer);
-choice2.addEventListener("click", lockAnswer);
-choice3.addEventListener("click", lockAnswer);
-choice4.addEventListener("click", lockAnswer);
-
-function lockAnswer(){
-    if(document.getElementById(choice).clicked){
-        answerChoice=1;
-        console.log("1");
-    }
-    if(document.getElementById(choice2).clicked){
-        answerChoice=2;
-        console.log("2");
-    }
-    if(document.getElementById(choice3).clicked){
-        answerChoice=3;
-        console.log("3");
-    }
-    if(document.getElementById(choice4).clicked){
-        answerChoice=4;
-        console.log("4");
-    }
-    
-
-
-
-
-//this is gonna be the function{
-function checkCorrect() {
-//  if options[] = correct answer
-if(answerChoice === correctAnswer){
-//  add 1 to correct variable
-correct++;
-// set class to correct
-
+function lockAnswer1(){
+    answerChoice=1;
 };
+function lockAnswer2(){
+    answerChoice=2;
 };
+function lockAnswer3(){
+    answerChoice=3;
 };
-//var count = 0
-//count i++1
+function lockAnswer4(){
+    answerChoice=4;
+};   
+//add submit button
+//make submit button check correctanswer, against answer choice. 
