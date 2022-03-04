@@ -100,7 +100,7 @@ function startQuiz() {
     buttonNext.innerHTML = "Next";
     buttonBox.appendChild(buttonNext);
     //remove start button
-    //start.remove();
+    start.remove();
     buttonNext.addEventListener("click", nextQ);
     
 };
