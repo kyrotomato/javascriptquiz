@@ -1,7 +1,7 @@
 //questions pool
 var questions = [{
     question: "A type of element that clearly describes its meaning to both the browser and the developer",
-    options: ["semantic", "details;", "section;", "summary;"],
+    options: ["semantic", "details", "section", "summary"],
     correctAnswer: 3
 }, {
     question: "Javascript library that greatly simplifies JavaScript programming",
@@ -66,7 +66,7 @@ function startQuiz() {
     questionContainerEl.innerText = questions[qCount].question;
     //create el for the choices
     var choicesContainerEl = document.createElement("ul");
-    questionContainerEl.appendChild(choicesContainerEl);
+    quizContainerEl.appendChild(choicesContainerEl);
     //four spaces for answers
     //1
     var choice = document.createElement("ol");
