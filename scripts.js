@@ -73,22 +73,22 @@ function startQuiz() {
     var choice = document.createElement("button");
     choicesContainerEl.appendChild(choice);
     choice.innerText = questions[qCount].options[0];
-    choice.setAttribute("id", "answerA");
+    choice.setAttribute("id", "answer-1");
     //2
     var choice2 = document.createElement("button");
     choicesContainerEl.appendChild(choice2);
     choice2.innerText = questions[qCount].options[1];
-    choice2.setAttribute("id", "answerB");
+    choice2.setAttribute("id", "answer-2");
     //3
     var choice3 = document.createElement("button");
     choicesContainerEl.appendChild(choice3);
     choice3.innerText = questions[qCount].options[2];
-    choice3.setAttribute("id", "answerC");
+    choice3.setAttribute("id", "answer-3");
     //4
     var choice4 = document.createElement("button");
     choicesContainerEl.appendChild(choice4);
     choice4.innerText = questions[qCount].options[3];
-    choice4.setAttribute("id", "answerD");
+    choice4.setAttribute("id", "answer-4");
     //button container
     var buttonBox = document.createElement("div");
     quizContainerEl.appendChild(buttonBox);
@@ -104,10 +104,10 @@ function startQuiz() {
     start.remove();
     buttonNext.addEventListener("click", nextQ);
     buttonPrev.addEventListener("click", prevQ);
-    choice.addEventListener("click", lockAnswer1);
-    choice2.addEventListener("click", lockAnswer2);
-    choice3.addEventListener("click", lockAnswer3);
-    choice4.addEventListener("click", lockAnswer4);
+    choice.addEventListener("click", checkAnswer);
+    choice2.addEventListener("click", checkAnswer);
+    choice3.addEventListener("click", checkAnswer);
+    choice4.addEventListener("click", checkAnswer);
     
 };
 
@@ -116,81 +116,54 @@ function startQuiz() {
 function nextQ() {
     //increase the q count so the question increase
     qCount = qCount + 1;
-    //target the created div id
-    document.getElementById(questioncontainer);
-    //set the text of the container to the next question
-    questioncontainer.innerText = questions[qCount].question;
-
-    //target the choice elements
-        //1
-        document.getElementById(answerA);
-        //innertext
-        answerA.innerText = questions[qCount].options[0];
-        //2
-        document.getElementById(answerB);
-        //innertext
-        answerB.innerText = questions[qCount].options[1];
-        //3
-        document.getElementById(answerC);
-        //innertext
-        answerC.innerText = questions[qCount].options[2];
-        //4
-        document.getElementById(answerD);
-        //innertext
-        answerD.innerText = questions[qCount].options[3];
+    setQuestion();
 
 };
 function prevQ() {
     //increase the q count so the question increase
     qCount = qCount - 1;
-    //target the created div id
+    setQuestion();
+
+};
+function setQuestion(){
     document.getElementById(questioncontainer);
     //set the text of the container to the next question
     questioncontainer.innerText = questions[qCount].question;
 
     //target the choice elements
         //1
-        document.getElementById(answerA);
+        var answerA = document.getElementById("answer-1");
         //innertext
         answerA.innerText = questions[qCount].options[0];
+        answerA.classList.remove('correct');
         //2
-        document.getElementById(answerB);
+        var answerB = document.getElementById("answer-2");
         //innertext
         answerB.innerText = questions[qCount].options[1];
+        answerB.classList.remove('correct');
         //3
-        document.getElementById(answerC);
+        var answerC = document.getElementById("answer-3");
         //innertext
         answerC.innerText = questions[qCount].options[2];
+        answerC.classList.remove('correct');
         //4
-        document.getElementById(answerD);
+        var answerD = document.getElementById("answer-4");
         //innertext
         answerD.innerText = questions[qCount].options[3];
+        answerD.classList.remove('correct');
+}
 
+function checkAnswer(event){
+    var id=event.target.id;
+    var userAnswer=id.split('-')[1];
+    if (userAnswer==questions[qCount].correctAnswer){
+        correct++
+        event.target.classList.add("correct");
+    };
 };
-
-
-
-// choice = document.getElementById("answerA");
-// choice2 = document.getElementById("answerB");
-// choice3 = document.getElementById("answerC");
-// choice4 = document.getElementById("answerD");
-
-// choice.addEventListener("click", lockAnswer);
-// choice2.addEventListener("click", lockAnswer);
-// choice3.addEventListener("click", lockAnswer);
-// choice4.addEventListener("click", lockAnswer);
-
-function lockAnswer1(){
-    answerChoice=1;
-};
-function lockAnswer2(){
-    answerChoice=2;
-};
-function lockAnswer3(){
-    answerChoice=3;
-};
-function lockAnswer4(){
-    answerChoice=4;
-};   
 //add submit button
-//make submit button check correctanswer, against answer choice. 
+//make submit button check correctanswer, against answer choice.
+
+//record number of correct
+
+//timer

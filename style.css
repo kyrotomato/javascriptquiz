@@ -1,4 +1,4 @@
-#answerA, #answerB ,#answerC , #answerD{
+#answer-1, #answer-2 ,#answer-3 , #answer-4{
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -6,4 +6,7 @@
     width: 100px;
     background-color: lightsalmon;
     margin-top: 5px;
+}
+.correct{
+    background-color: green !important;
 }
