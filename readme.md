@@ -6,3 +6,4 @@
 # **Links**
 ## https://github.com/kyrotomato/javascriptquiz
 ## https://kyrotomato.github.io/javascriptquiz
+![image](https://user-images.githubusercontent.com/97704480/156954761-381b13c7-fdf6-4d01-a244-91578e404bcb.png)
