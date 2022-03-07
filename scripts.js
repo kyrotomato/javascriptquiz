@@ -2,19 +2,19 @@
 var questions = [{
     question: "A type of element that clearly describes its meaning to both the browser and the developer",
     options: ["semantic", "details", "section", "summary"],
-    correctAnswer: 3
+    correctAnswer: 1
 }, {
     question: "Javascript library that greatly simplifies JavaScript programming",
     options: ["Java", "Jquery", "JSON", "Bootstrap"],
-    correctAnswer: 3
+    correctAnswer: 2
 }, {
     question: "#div-example' is an example of what type of selector",
     options: ["element", "id", "class", "specific"],
-    correctAnswer: 3
+    correctAnswer: 2
 }, {
     question: "Who created javascript?",
     options: ["Erlich Bachman", "Brendan Eich", "Elon Musk", "James Gosling"],
-    correctAnswer: 3
+    correctAnswer: 2
 }, {
     question: "The external javascript file must contain the <script> tag",
     options: ["True", "False"],
@@ -26,11 +26,11 @@ var questions = [{
 }, {
     question: "how do you declare a JavaScript variable with the name example?",
     options: ["Var example;", "var-example;", "var = example;", "var = ('example')"],
-    correctAnswer: 3
+    correctAnswer: 1
 }, {
     question: "Is Javascript case sensitive",
     options: ["Yes", "No"],
-    correctAnswer: 3
+    correctAnswer: 1
 }, {
     question: "Which operator is used to assign a value to a variable?",
     options: ["'X'", "'='", "'-'", "no operator is used"],
